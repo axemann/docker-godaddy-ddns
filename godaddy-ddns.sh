@@ -55,13 +55,13 @@ CheckURL=http://api.ipify.org
 # This variable will be evaluated at runtime but will not be parsed for errors nor execution guaranteed.
 # Take note of the single quotes. If it's a script, ensure it's executable i.e. chmod 755 ./script.
 # Example: SuccessExec='/bin/echo "$(date): My public IP changed to ${PublicIP}!">>/var/log/GoDaddy.sh.log'
-SuccessExec=''
+SuccessExec='/bin/echo "$(date): My public IP changed to ${PublicIP}!">>/var/log/GoDaddy.sh.log'
  
 # Optional scripts/programs/commands to execute on update failure. Leave blank to disable.
 # This variable will be evaluated at runtime but will not be parsed for errors nor execution guaranteed.
 # Take note of the single quotes. If it's a script, ensure it's executable i.e. chmod 755 ./script.
 # Example: FailedExec='/some/path/something-went-wrong.sh ${Update} && /some/path/email-script.sh ${PublicIP}'
-FailedExec=''
+FailedExec='/bin/echo "$(date): Failed to update public IP to ${PublicIP}!">>/var/log/GoDaddy.sh.log'
 # End settings
  
 Curl=$(/usr/bin/which curl 2>/dev/null)
